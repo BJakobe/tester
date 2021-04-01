@@ -18,9 +18,13 @@ def index_card_view(request):
 							form.cleaned_data['section']
 						)
 				)
+		else:
+			return render(request, 'index.html', {'form': form})
+
 	else:
 		form = IndexCardForm()
-		return render(request, "index.html", {'form': form})
+	
+	return render(request, "index.html", {'form': form})
 
 # def index(request):
 # 	return HttpResponse('Hello World! This came from the index view')
